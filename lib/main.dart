@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'le01_MyHomePage.dart';
 import 'le02_LoginDiceapp.dart';
+import 'le03_LoginView.dart';
 
 void main() {
   runApp(MyApp());
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       // home: MyHomePage(title: 'Flutter Demo Home Page'),
-      home: Login(),
+      home: LoginView(),
     );
   }
 }
