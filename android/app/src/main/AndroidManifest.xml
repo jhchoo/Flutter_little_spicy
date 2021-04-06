@@ -1,5 +1,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.jhchoo.flutter_little_spicy">
+
+   <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+   <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+   <uses-permission android:name="android.permission.INTERNET" />
+
    <application
         android:label="flutter_little_spicy"
         android:icon="@mipmap/ic_launcher">
