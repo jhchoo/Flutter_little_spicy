@@ -6,8 +6,9 @@
    <uses-permission android:name="android.permission.INTERNET" />
 
    <application
-        android:label="flutter_little_spicy"
-        android:icon="@mipmap/ic_launcher">
+        android:label="플루터날씨"
+        android:icon="@mipmap/ic_launcher"
+        android:usesCleartextTraffic="true" >
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"

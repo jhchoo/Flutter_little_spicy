@@ -26,7 +26,7 @@ class _WeatherScreenState extends State<WeatherSplash> {
     double lat = mylocation.latitude2;
     double lon = mylocation.longitude2;
     String test2 =
-        'http://api.openweathermap.org/data/2.5/weather?lat=$lat&lon=$lon&units=metric&APPID=$apikey';
+        'https://api.openweathermap.org/data/2.5/weather?lat=$lat&lon=$lon&units=metric&APPID=$apikey';
     var parsingData = await network.getJsonData(test2);
 
     // 이동
@@ -38,7 +38,7 @@ class _WeatherScreenState extends State<WeatherSplash> {
         MaterialPageRoute(
           builder: (BuildContext context) => WeatherMain(),
         ),
-        ModalRoute.withName('/'));
+        (Route<dynamic> route) => false);
   }
 
   @override

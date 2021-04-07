@@ -108,7 +108,7 @@ class _WeatherMainState extends State<WeatherMain> with WidgetsBindingObserver {
     double lat = mylocation.latitude2;
     double lon = mylocation.longitude2;
     String test2 =
-        'http://api.openweathermap.org/data/2.5/weather?lat=$lat&lon=$lon&units=metric&APPID=$apikey';
+        'https://api.openweathermap.org/data/2.5/weather?lat=$lat&lon=$lon&units=metric&APPID=$apikey';
     var parsingData = await network.getJsonData(test2);
 
     var data = WeatherData.getInstance();
@@ -216,7 +216,7 @@ class _WeatherSrarchState extends State<WeatherSrarch> {
   void getCityName() async {
     String qCity = controller.text;
     String test2 =
-        'http://api.openweathermap.org/data/2.5/weather?q=$qCity&units=metric&APPID=$apikey';
+        'https://api.openweathermap.org/data/2.5/weather?q=$qCity&units=metric&APPID=$apikey';
     var parsingData = await network.getJsonData(test2);
     if (parsingData == null) {
       showToast("날씨 정보 획득 실패");
