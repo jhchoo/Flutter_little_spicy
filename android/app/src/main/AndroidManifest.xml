@@ -6,7 +6,7 @@
    <uses-permission android:name="android.permission.INTERNET" />
 
    <application
-        android:label="플루터날씨"
+        android:label="플러터날씨"
         android:icon="@mipmap/ic_launcher"
         android:usesCleartextTraffic="true" >
         <activity
