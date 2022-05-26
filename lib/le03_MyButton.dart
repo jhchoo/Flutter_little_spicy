@@ -17,11 +17,11 @@ class MyButton extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
-                    image, //Image.asset('images/glogo.png'),
+                    image, //Image.asset('assets/images/glogo.png'),
                     text, // Text('Login with Google', style: TextStyle(color: Colors.black87, fontSize: 15.0)),
                     Opacity( // 투명도 설정
                       opacity: 0.0,
-                      child: Image.asset('images/glogo.png'),
+                      child: Image.asset('assets/images/glogo.png'),
                     ),
                   ],
                 ),

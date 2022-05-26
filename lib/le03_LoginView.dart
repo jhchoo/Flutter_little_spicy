@@ -31,14 +31,14 @@ class LoginView extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
-                    Image.asset('images/glogo.png'),
+                    Image.asset('assets/images/glogo.png'),
                     Text(
                       'Login with Google',
                       style: TextStyle(color: Colors.black87, fontSize: 15.0),
                     ),
                     Opacity( // 투명도 설정
                       opacity: 0.0,
-                      child: Image.asset('images/glogo.png'),
+                      child: Image.asset('assets/images/glogo.png'),
                     ),
                   ],
                 ),
@@ -63,7 +63,7 @@ class LoginView extends StatelessWidget {
               height: 10.0,
             ),
             MyButton (
-              image: Image.asset('images/glogo.png'),
+              image: Image.asset('assets/images/glogo.png'),
               text: Text('Login with Google', style: TextStyle(color: Colors.black87, fontSize: 15.0)),
               color: Colors.white,
               radous: 4.0,
@@ -78,14 +78,14 @@ class LoginView extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
-                    Image.asset('images/flogo.png'),
+                    Image.asset('assets/images/flogo.png'),
                     Text(
                       'Login with Facebook',
                       style: TextStyle(color: Colors.white, fontSize: 15.0),
                     ),
                     Opacity(
                       opacity: 0.0,
-                      child: Image.asset('images/glogo.png'),
+                      child: Image.asset('assets/images/glogo.png'),
                     ),
                   ],
                 ),

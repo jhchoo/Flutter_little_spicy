@@ -5,7 +5,7 @@ class MyHomePage extends StatefulWidget {
   // 외부에서 타이틀을 받기 위해서 생성자를 만든다.
   MyHomePage({Key key, this.title}) : super(key: key);
 
-  final String title;
+  String title;
 
   // createState 함수는 항상 호출 된다.
   // => 형식 사용 가능

@@ -44,7 +44,7 @@ class _LoginState extends State<LoginDice> {
                 Padding(padding: EdgeInsets.only(top: 50)),
                 Center(
                   child: Image(
-                    image: AssetImage('images/small-chef.png'),
+                    image: AssetImage('assets/images/small-chef.png'),
                     width: 190.0,
                     height: 190.0,
                   ),
@@ -166,9 +166,9 @@ class _DiceState extends State<Dice> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center, // 내부 정렬 위치
                 children: [
-                  Expanded(child: Image.asset('images/dice$leftDice.png')), // Image.asset 이미지 불러오기
+                  Expanded(child: Image.asset('assets/images/dice$leftDice.png')), // Image.asset 이미지 불러오기
                   SizedBox(width: 20),
-                  Expanded(child: Image.asset('images/dice$rightDice.png')), // flex 라는 속성도 있다.
+                  Expanded(child: Image.asset('assets/images/dice$rightDice.png')), // flex 라는 속성도 있다.
                 ],
               ),
             ),
