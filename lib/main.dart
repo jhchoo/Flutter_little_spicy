@@ -3,6 +3,8 @@ import 'le01_MyHomePage.dart';
 import 'le02_LoginDiceapp.dart';
 import 'le03_LoginView.dart';
 import 'le04_WeatherApp/Loading.dart';
+import 'le05_GlobalkeyLecture.dart';
+import 'le05_GlobalkeyScaffold.dart';
 
 void main() {
   runApp(MyApp());
@@ -32,6 +34,11 @@ class MyApp extends StatelessWidget {
 
       // 네번째 예제 - 날씨 앱 
       home: Loading(),
+
+      // 2021.07 널포인트 및 key에 대한 없데이트가 있어서
+      // 중요 패치사항을 체크 하고 넘어가야 한다.
+      // home: GlobalkeyLecture(), // 글로벌 키 사용법
+      // home: GlobalkeyScaffold(), // 스케폴드의 최상위 값을 알 수 있다.
 
       // 다섯번째 예제 - 채팅 앱 
 

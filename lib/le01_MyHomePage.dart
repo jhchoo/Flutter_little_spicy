@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 class MyHomePage extends StatefulWidget {
   
   // 외부에서 타이틀을 받기 위해서 생성자를 만든다.
-  MyHomePage({Key key, this.title}) : super(key: key);
+  MyHomePage({Key? key, this.title}) : super(key: key);
 
-  String title;
+  String? title;
 
   // createState 함수는 항상 호출 된다.
   // => 형식 사용 가능
@@ -47,7 +47,7 @@ class _MyHomePageState extends State<MyHomePage> { // State<MyHomePage>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Text(widget.title!),
       ),
       body: Center( // 가운데
         child: Column( // 세로 위젯

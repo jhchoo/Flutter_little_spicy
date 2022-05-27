@@ -65,6 +65,7 @@ class _LoginState extends State<LoginDice> {
                       child: Column( // 세로
                         children: [
                           TextField( // 텍스트 필드
+                            key: ValueKey(1), // 
                             controller: controller, // 텍스트 필드와 컨트롤러를 연결해서 값을 가져올 수 있다.
                             decoration: InputDecoration(
                               labelText: 'Enter dice',
@@ -72,6 +73,7 @@ class _LoginState extends State<LoginDice> {
                             keyboardType: TextInputType.emailAddress,
                           ),
                           TextField( // 텍스트 필드
+                            key: ValueKey(2),
                             controller: controller2, // 텍스트 필드와 컨트롤러를 연결해서 값을 가져올 수 있다.
                             decoration: InputDecoration(
                               labelText: 'Enter Password',

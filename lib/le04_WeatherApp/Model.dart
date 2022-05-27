@@ -30,7 +30,7 @@ class Model {
   }
 
   // ---- 대기 아이콘
-  Widget getAirIcon(int index) {
+  Widget getAirIcon(int? index) {
     if (index == 1) {
       return Image.asset(
         'assets/images/good.png',
@@ -65,7 +65,7 @@ class Model {
     
   }
 
-  Widget getAirCondition(int index) {
+  Widget getAirCondition(int? index) {
     if (index == 1) {
       return Text(
         '"매우좋음"',

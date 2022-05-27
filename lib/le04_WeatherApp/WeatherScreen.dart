@@ -18,17 +18,19 @@ class WeatherScreen extends StatefulWidget {
 }
 
 class _WeatherScreenState extends State<WeatherScreen> {
-  String cityName;
-  int temp;
+  String? cityName;
+  int? temp;
   var date = DateTime.now();
-  int condition;
+  int? condition;
   Model model = Model();
-  Widget icon;
-  String description;
+  late Widget icon;
+  String? description;
 
   // 대기질
-  Widget airIcon;
-  Widget airState;
+  late Widget airIcon;
+  late Widget airState;
+  double? dust1;
+  double? dust2;
 
   @override
   void initState() {
@@ -48,12 +50,15 @@ class _WeatherScreenState extends State<WeatherScreen> {
     cityName = weatherData['name'];
 
     condition = weatherData['weather'][0]['id'];
-    icon = model.getWeatherIcon(condition);
+    icon = model.getWeatherIcon(condition!);
 
     // ----- 대기질 지수를 가져오자.
-    int index = airData['list'][0]['main']['aqi'];
+    int? index = airData['list'][0]['main']['aqi'];
     airIcon = model.getAirIcon(index);
     airState = model.getAirCondition(index);
+
+    dust1 = airData['list'][0]['components']['pm10'];
+    dust2 = airData['list'][0]['components']['pm2_5'];
   }
 
   String getSystemTime() {
@@ -218,13 +223,13 @@ class _WeatherScreenState extends State<WeatherScreen> {
                 MyBottomWidget(
                   text1: '미세먼지',
                   imageName: 'good',
-                  text2: '174.75',
+                  text2: '$dust1',
                   textBottom: '㎍/㎥',
                 ),
                 MyBottomWidget(
                   text1: '초미세먼지',
                   imageName: 'good',
-                  text2: '84.03',
+                  text2: '$dust2',
                   textBottom: '㎍/㎥',
                 ),
               ],
@@ -240,10 +245,10 @@ class _WeatherScreenState extends State<WeatherScreen> {
 class MyBottomWidget extends StatefulWidget {
   MyBottomWidget({this.text1, this.imageName, this.text2, this.textBottom});
 
-  String text1;
-  String imageName;
-  String text2;
-  String textBottom;
+  String? text1;
+  String? imageName;
+  String? text2;
+  String? textBottom;
 
   @override
   State<MyBottomWidget> createState() => _MyBottomWidgetState();
@@ -255,7 +260,7 @@ class _MyBottomWidgetState extends State<MyBottomWidget> {
   void initState() {
     super.initState();
 
-    if (widget.text2.length == 0) {
+    if (widget.text2!.length == 0) {
       height1 = 40;
       height2 = 0;
     } else {

@@ -6,7 +6,7 @@ import 'data/network.dart';
  
 
 class Loading extends StatefulWidget {
-  const Loading({Key key}) : super(key: key);
+  const Loading({Key? key}) : super(key: key);
 
   @override
   State<Loading> createState() => _LoadingState();
@@ -56,8 +56,8 @@ class _LoadingState extends State<Loading> {
   }
 
   void fetchData() {
-    double lat = myLocation.latitude2;
-    double lon = myLocation.longitude2;
+    double? lat = myLocation.latitude2;
+    double? lon = myLocation.longitude2;
     String url = 'https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=7b12532b9835cae242746a5cae557f3d&units=metric';
 
     // 한개의 API를 사용 할 때에는 어싱크는 then으로 받으면 편하다.
@@ -73,8 +73,8 @@ class _LoadingState extends State<Loading> {
 
   // API 두개를 받아보자.
   void fetchDataTwo() async {
-    double lat = myLocation.latitude2;
-    double lon = myLocation.longitude2;
+    double? lat = myLocation.latitude2;
+    double? lon = myLocation.longitude2;
 
     String url = 'https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=7b12532b9835cae242746a5cae557f3d&units=metric';
     var weatherData = await network.getJsonData(url);

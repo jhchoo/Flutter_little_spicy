@@ -2,8 +2,8 @@ import 'package:geolocator/geolocator.dart';
 
 class MyLocation {
 
-  double latitude2;
-  double longitude2;
+  double? latitude2;
+  double? longitude2;
 
   // 퍼미션 요청 팝업 후 획득 하도록 해야 한다.
   Future<Position> getMyCurrentLocation() async {

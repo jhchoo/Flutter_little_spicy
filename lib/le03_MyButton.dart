@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 class MyButton extends StatelessWidget {
   const MyButton({this.image, this.text, this.color, this.radous, this.onPressed}); // 생성자가 대괄호 안에 있어야 한다.
 
-  final Widget image;
-  final Widget text;
-  final Color color;
-  final double radous;
-  final VoidCallback onPressed;
+  final Widget? image;
+  final Widget? text;
+  final Color? color;
+  final double? radous;
+  final VoidCallback? onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -17,8 +17,8 @@ class MyButton extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
-                    image, //Image.asset('assets/images/glogo.png'),
-                    text, // Text('Login with Google', style: TextStyle(color: Colors.black87, fontSize: 15.0)),
+                    image!, //Image.asset('assets/images/glogo.png'),
+                    text!, // Text('Login with Google', style: TextStyle(color: Colors.black87, fontSize: 15.0)),
                     Opacity( // 투명도 설정
                       opacity: 0.0,
                       child: Image.asset('assets/images/glogo.png'),
@@ -34,7 +34,7 @@ class MyButton extends StatelessWidget {
               ),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.all(
-                  Radius.circular(radous),
+                  Radius.circular(radous!),
                 ),
               ),
             );
