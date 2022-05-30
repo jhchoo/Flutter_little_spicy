@@ -58,9 +58,9 @@ class _LoadingState extends State<Loading> {
   void fetchData() {
     double? lat = myLocation.latitude2;
     double? lon = myLocation.longitude2;
-    String url = 'https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=7b12532b9835cae242746a5cae557f3d&units=metric';
+    String url = 'https://api.openweathermap.org/data/2.5/weather?lat=$lat&lon=$lon&appid=$weatherId&units=metric';
 
-    // 한개의 API를 사용 할 때에는 어싱크는 then으로 받으면 편하다.
+    // 한개의 API 를 사용 할 때에는 어싱크는 then 으로 받으면 편하다.
     network.getJsonData(url).then((parsingData) {
         Navigator.push(context, MaterialPageRoute(builder:(context) {
           return WeatherScreen(parseWeatherData: parsingData);
@@ -76,11 +76,11 @@ class _LoadingState extends State<Loading> {
     double? lat = myLocation.latitude2;
     double? lon = myLocation.longitude2;
 
-    String url = 'https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=7b12532b9835cae242746a5cae557f3d&units=metric';
+    String url = 'https://api.openweathermap.org/data/2.5/weather?lat=$lat&lon=$lon&appid=$weatherId&units=metric';
     var weatherData = await network.getJsonData(url);
     print(weatherData);
 
-    String url2 = 'http://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=7b12532b9835cae242746a5cae557f3d';
+    String url2 = 'http://api.openweathermap.org/data/2.5/air_pollution?lat=$lat&lon=$lon&appid=$weatherId';
     var airData = await network.getJsonData(url2); // 나중에 널체크만 들어가면 될거 같다.
     print(airData);
 
@@ -89,16 +89,19 @@ class _LoadingState extends State<Loading> {
     }));
   }
 
+  // GitGuardian 에서 토큰이 보인다고 나왔다. 일단 중요한건 아니라서...  연습 후 제거 하도록 한다.
+  // 외부에서 키를 읽어 가도록 하면 좋을 듯 하다.
+  String weatherId = "날씨를 얻기 위한 키 추가 하면 된다.";
 }
 
 // https://openweathermap.org/current
 // https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key}&units=metric
-// https://api.openweathermap.org/data/2.5/weather?lat=37.402&lon=127.105&appid=7b12532b9835cae242746a5cae557f3d
+// https://api.openweathermap.org/data/2.5/weather?lat=37.402&lon=127.105&appid={API key}
 // appid는 딱히 알아도 쓸데가 없을거 같아서 놔둠.
 
 // 공기 대기질 확인
 // http://api.openweathermap.org/data/2.5/air_pollution?lat={lat}&lon={lon}&appid={API key}
-// http://api.openweathermap.org/data/2.5/air_pollution?lat=37.402&lon=127.105&appid=7b12532b9835cae242746a5cae557f3d
+// http://api.openweathermap.org/data/2.5/air_pollution?lat=37.402&lon=127.105&appid={API key}
 
 // VS-CODE 디버그 콘솔창 단축키
 // Ctrl + `

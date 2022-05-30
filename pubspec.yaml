@@ -17,6 +17,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
 version: 1.0.0+1
 
+# 이번 프로젝트 까지는 3.0 적용을 하지 않겠다. 다음에 만들땐, 3.0으로 적용하는 것으로 할 것이다.
 environment:
   sdk: '>=2.12.0 <3.0.0'
 
